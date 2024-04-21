@@ -32,6 +32,7 @@ Example:
     "email": "johndoe@example.com",
     "password": "P@ssw0rd"
 }
+```
 
 
 ### Response
@@ -46,14 +47,16 @@ Example response:
     "username": "john_doe",
     "email": "johndoe@example.com"
 }
+```
+
 
 If there is an error during the registration process (e.g., invalid input, username/email already taken), the API will respond with an appropriate error message and a status code of 400 (Bad Request).
 
-User Login
+### User Login
 To authenticate a user and obtain an access token, send a POST request to the following endpoint:
 
-Copy
-POST /api/user/login
+
+## POST /api/user/login
 Request Body
 The request body should be in JSON format and include the following fields:
 
@@ -61,35 +64,24 @@ username (string): The username of the user.
 password (string): The password of the user.
 Example:
 
-json
-Copy
+```json
 {
     "username": "john_doe",
     "password": "P@ssw0rd"
 }
-Response
+```
+
+### Response
 Upon successful login, the API will respond with a status code of 200 (OK) and a JSON object containing the access token and refresh token.
 
 Example response:
 
-json
-Copy
+```json
 {
     "access_token": "eyJhbGciOi...",
     "refresh_token": "eyJhbGciOi..."
 }
+```
+
+
 If the login fails (e.g., invalid credentials), the API will respond with an appropriate error message and a status code of 401 (Unauthorized).
-
-API Documentation
-For detailed information about the API endpoints, data formats, and error handling, refer to the API documentation.
-
-Deployment
-The Fitnessify User Registration API can be deployed on PythonAnywhere or any other platform of your choice.
-
-Submission
-Please submit your code and any necessary documentation by 12pm WAT on the 22nd of April at this link.
-
-Mentors
-John Diginee
-Tshegofatso Seane (Backend Mentor)
-Tommy Shelby (BE Mentor)
