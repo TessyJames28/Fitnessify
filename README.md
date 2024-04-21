@@ -1,87 +1,44 @@
-# Fitnessify User Registration API
+# Fitnessify
 
-This is a backend API for user registration developed for the Fitnessify mobile fitness app. The API allows users to register securely and stores their information in a database. The API is built using [insert chosen backend technology] and integrates with [insert chosen database].
+Fitnessify is a fitness tracking application that helps users monitor their workouts, set goals, and stay motivated on their fitness journey.
 
-## Requirements
+## Table of Contents
 
-To use the Fitnessify User Registration API, you need to meet the following requirements:
+- [About](#about)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
 
-- [insert backend technology] installed
-- [insert database] installed and configured
-- [insert any other requirements]
+## About
 
-## User Registration
+This is a backend API for user registration developed for the Fitnessify mobile fitness app. The API allows users to register securely and stores their information in a database. The API is built using [Django] and integrates with [SQLite].
 
-To register a new user, send a secure POST request to the following endpoint:
+## Features
 
-## POST /api/user/register
-
-### Request Body
-
-The request body should be in JSON format and include the following fields:
-
-- `username` (string): The desired username for the new user.
-- `email` (string): The email address of the new user.
-- `password` (string): The password for the new user.
-
-Example:
-
-```json
-{
-    "username": "john_doe",
-    "email": "johndoe@example.com",
-    "password": "P@ssw0rd"
-}
-```
+- User registration and login
+- Access and refresh token generation with jwt
 
 
-### Response
+## Installation
 
-Upon successful registration, the API will respond with a status code of 201 (Created) and a JSON object containing the user's information.
+To install and run Fitnessify locally, follow these steps:
 
-Example response:
+1. Clone the repository from [GitHub](https://github.com/TessyJames28/Fitnessify).
 
-```json
-{
-    "id": 123,
-    "username": "john_doe",
-    "email": "johndoe@example.com"
-}
-```
+2. Navigate to the project directory.
+
+3. Install the necessary dependencies by running the following command:
+
+```pip install```
 
 
-If there is an error during the registration process (e.g., invalid input, username/email already taken), the API will respond with an appropriate error message and a status code of 400 (Bad Request).
+4. Make mnigration and migrate the database by using the following command:
 
-### User Login
-To authenticate a user and obtain an access token, send a POST request to the following endpoint:
+```python manage.py makemigrations```
+```python manage.py migrate```
 
+5. Start the application using the following command:
 
-## POST /api/user/login
-Request Body
-The request body should be in JSON format and include the following fields:
+```python manage.py runserver```
 
-username (string): The username of the user.
-password (string): The password of the user.
-Example:
-
-```json
-{
-    "username": "john_doe",
-    "password": "P@ssw0rd"
-}
-```
-
-### Response
-Upon successful login, the API will respond with a status code of 200 (OK) and a JSON object containing the access token and refresh token.
-
-Example response:
-
-```json
-{
-    "access_token": "eyJhbGciOi...",
-    "refresh_token": "eyJhbGciOi..."
-}
-```
-
-
-If the login fails (e.g., invalid credentials), the API will respond with an appropriate error message and a status code of 401 (Unauthorized).
+6. Access the application by visiting `http://localhost:8000` in your web browser.
